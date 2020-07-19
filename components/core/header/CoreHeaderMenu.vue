@@ -31,7 +31,7 @@
 
 	.nav .nav__menu .nav__menu__item.nav__menu__item--active .nav__menu__underline{
 		width: 100%;
-		height: 3px;
+		height: 2px;
 		background-color: #1ABC9C;
 	}
 </style>
