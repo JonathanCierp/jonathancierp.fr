@@ -6,17 +6,20 @@
 		</div>
 		<core-background-shape />
     <Nuxt />
+		<core-footer class="mt-12" />
   </div>
 </template>
 
 <script>
 	import CoreHeader from "@/components/core/header/CoreHeader"
+	import CoreFooter from "@/components/core/CoreFooter"
 	import CoreBackgroundShape from "@/components/core/CoreBackgroundShape"
 	import SectionPresentation from "@/components/section/SectionPresentation"
 
 	export default {
 		components: {
 			CoreHeader,
+			CoreFooter,
 			CoreBackgroundShape,
 			SectionPresentation
 		},
