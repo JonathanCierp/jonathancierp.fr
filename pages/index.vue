@@ -1,6 +1,6 @@
 <template>
 	<div class="container mx-auto">
-		<section-item />
+		<section-item v-for="section in sections" :key="section.id" :section="section" />
 	</div>
 </template>
 
@@ -9,7 +9,7 @@
 
 	export default {
 		components: {
-
+			SectionItem
 		},
 		data() {
 			return {
@@ -18,7 +18,22 @@
 						id: "mes-services",
 						class: "mes-services",
 						title: "Mes services"
-					}
+					},
+					{
+						id: "realisatons",
+						class: "realisatons",
+						title: "Mes derniers projets"
+					},
+					{
+						id: "tarifs",
+						class: "tarifs",
+						title: "Tarifs"
+					},
+					{
+						id: "contact",
+						class: "contact",
+						title: "Me contacter"
+					},
 				]
 			}
 		}
