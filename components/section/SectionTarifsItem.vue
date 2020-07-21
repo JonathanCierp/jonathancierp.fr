@@ -11,7 +11,7 @@
 			<div v-if="tarif.title === 'Forfait'" class="flex">
 				<span class="font-bold text-xl">35</span>
 				<span class="tarifs__item__price__devise font-bold ml-1">€ / heure</span>
-				<span class="tarifs__item__price__sup ml-2">{{ tarif.priceSup }}*</span>
+				<span class="tarifs__item__price__sup ml-2">**</span>
 				<span class="font-bold text-xl ml-2">Ou</span>
 			</div>
 			<span v-else>{{ tarif.priceText }}</span>

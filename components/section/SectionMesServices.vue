@@ -1,6 +1,6 @@
 <template>
 	<div class="services flex mt-16">
-		<div class="services__item relative hover:shadow-md cursor-pointer" :class="i < 3 ? 'mr-6' : ''" v-for="(service, i) in services">
+		<div class="services__item relative hover:shadow-md transition-shadow duration-300 ease-in-out" :class="i < 3 ? 'mr-6' : ''" v-for="(service, i) in services">
 			<div class="services__item__title flex justify-center items-center">
 				<span>{{ service.title }}</span>
 			</div>

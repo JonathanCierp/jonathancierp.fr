@@ -1,6 +1,8 @@
 <template>
 	<div class="container mx-auto">
-		<section-item v-for="section in sections" :key="section.id" :section="section" />
+		<main>
+			<section-item v-for="section in sections" :key="section.id" :section="section" />
+		</main>
 	</div>
 </template>
 

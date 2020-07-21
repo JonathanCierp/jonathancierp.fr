@@ -51,7 +51,7 @@
 					{
 						icon: IconRoad,
 						title: "Adresse",
-						content: "31 avenue de l'europe"
+						content: "Rillieux-la-pape"
 					},
 					{
 						icon: IconPhone,

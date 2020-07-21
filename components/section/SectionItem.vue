@@ -1,6 +1,6 @@
 <template>
-	<section :id="section.id" class="section mt-12" :class="section.class">
-		<h1 class="text-5xl font-bold text-center">{{ section.title }}</h1>
+	<section itemscope :id="section.id" class="section mt-12" :class="section.class">
+		<h2 class="text-5xl font-bold text-center">{{ section.title }}</h2>
 		<div class="section__divider mt-6 flex justify-center items-center">
 			<div></div>
 			<icon-circle class="mx-4" />

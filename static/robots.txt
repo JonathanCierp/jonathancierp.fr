@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://jonathancierp.fr/sitemap.xml

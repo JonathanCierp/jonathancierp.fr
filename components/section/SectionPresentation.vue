@@ -1,11 +1,11 @@
 <template>
-	<section id="presentation" class="presentation mt-16 container mx-auto flex">
+	<section itemscope id="presentation" class="presentation mt-16 container mx-auto flex">
 		<div class="presentation__content w-1/2">
 			<h1 class="text-5xl text-white leading-tight font-semibold">Developpeur web <br> freelance à Lyon</h1>
-			<p class="my-6 text-white">
+			<h2 class="my-6 text-white">
 				Développeur freelance à Lyon depuis plus de 1 ans. Je crée votre <br>
 				site internet selon votre demande.
-			</p>
+			</h2>
 			<div class="presentation__content__actions flex">
 				<button class="presentation__content__actions__contact text-white font-semibold mr-3 py-3 px-6">Me contacter</button>
 				<button class="presentation__content__actions__more text-white font-semibol mx-3 py-3 px-6">En savoir plus</button>

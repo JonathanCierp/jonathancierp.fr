@@ -1,7 +1,7 @@
 <template>
 	<header class="nav container mx-auto flex justify-between text-white py-4 h-24 items-center">
 		<div class="nav__brand flex items-center">
-			<img class="nav__brand__image w-16 h-16 rounded-full" src="~@/assets/img/moi.png">
+			<img class="nav__brand__image w-16 h-16 rounded-full" src="~@/assets/img/moi.png" alt="Jonathan CIERP">
 			<div class="nav__brand__text ml-6">
 				<span class="font-semibold">Jonathan CIERP</span>
 			</div>

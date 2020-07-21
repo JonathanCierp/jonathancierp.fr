@@ -1,9 +1,25 @@
 <template>
-	<div class="tarifs flex mt-16">
-		<section-tarifs-item v-for="(tarif, i) in tarifs" :key="i" :tarif="tarif" />
-		<div class="tarifs__row w-1/4 flex flex-col">
-			<section-tarifs-item class="w-full mb-4" :tarif="tarifMaintenance" :sur-mesure="false" />
-			<section-tarifs-item class="w-full" :tarif="tarifSpecifique" :sur-mesure="false" />
+	<div class="tarifs mt-16">
+		<div class="tarifs__devis bg-white flex items-center justify-center h-16 font-bold text-xl">
+			<span>Une idée, un projet ? N'hésitez pas à <span>demander un devis</span> ! [GRATUIT]</span>
+		</div>
+		<div class="tarifs__ items flex mt-8">
+			<section-tarifs-item class="hover:shadow-md transition-shadow duration-300 ease-in-out" v-for="(tarif, i) in tarifs" :key="i" :tarif="tarif" />
+			<div class="tarifs__row w-1/4 flex flex-col">
+				<section-tarifs-item class="hover:shadow-md w-full mb-4 transition-shadow duration-300 ease-in-out" :tarif="tarifMaintenance" :sur-mesure="false" />
+				<section-tarifs-item class="hover:shadow-md w-full transition-shadow duration-300 ease-in-out" :tarif="tarifSpecifique" :sur-mesure="false" />
+			</div>
+		</div>
+		<div class="tarifs__annotations text-xs mt-2">
+			<span class="underline font-bold">L'ensemble des tarifs indiqués sont H.T.</span>
+			<span>
+				<span class="font-bold">Droit d'auteur & propriété intellectuelle</span> :
+				Vous êtes à la fin du projet, propriétaire de l'ensemble des sources (fichiers) composant celui-ci.
+				<span class="font-bold">Paiment possible en plusieurs fois.</span>
+			</span> <br>
+			<span>* <span class="font-bold">Prix à titre informatif</span> : Changement possible selon les demandes et les choix du client.</span> <br>
+			<span>** Estimation du temps de travail appuyé par un devis.</span> <br>
+			<span>***  Maintenance annuelle (engagement 12 mois).</span> <br>
 		</div>
 	</div>
 </template>
@@ -81,7 +97,7 @@
 						subtitle: "Site vitrine",
 						priceText: "À partir de",
 						price: "1200",
-						priceSup: "**",
+						priceSup: "*",
 						priceSupDevise: "€",
 						buttonLabel: "Demander un devis",
 						details: [
@@ -137,7 +153,7 @@
 						subtitle: "E-commerce",
 						priceText: "À partir de",
 						price: "2500",
-						priceSup: "***",
+						priceSup: "*",
 						priceSupDevise: "€",
 						buttonLabel: "Demander un devis",
 						details: [
@@ -193,7 +209,7 @@
 					title: "Forfait",
 					subtitle: "maintenance",
 					price: "300",
-					priceSup: "****",
+					priceSup: "***",
 					priceSupDevise: "€ / an",
 					buttonLabel: "Me contacter",
 					details: [
@@ -219,7 +235,7 @@
 					subtitle: "spécifiques",
 					priceText: "Taux journalier moyen",
 					price: "300",
-					priceSup: "******",
+					priceSup: "",
 					priceSupDevise: "€ / Jour",
 					buttonLabel: "Me contacter"
 				}
@@ -229,5 +245,11 @@
 </script>
 
 <style>
+	.tarifs .tarifs__devis span span {
+		color: #1ABC9C;
+	}
 
+	.tarifs .tarifs__annotations  {
+		color: #818181;
+	}
 </style>

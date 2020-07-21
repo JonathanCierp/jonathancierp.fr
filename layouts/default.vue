@@ -58,7 +58,12 @@
 
 <style>
 	body {
-		background-color: #F5F5F5;
+		background-color: #f4f8fc;
+		/*background-color: #F5F5F5;*/
+	}
+
+	body.modal-active {
+		overflow: hidden;
 	}
 
 	.header-background-color {
