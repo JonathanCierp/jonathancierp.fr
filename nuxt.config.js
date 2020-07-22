@@ -61,7 +61,8 @@ export default {
   */
   plugins: [
 		{ src: "@/plugins/vue-carousel", mode: "client" },
-		{ src: '@/plugins/google-analytics.js', mode: 'client' }
+		{ src: '@/plugins/google-analytics.js', mode: 'client' },
+		{ src: '@/plugins/v-tooltip.js', mode: 'client' }
   ],
   /*
   ** Auto import components

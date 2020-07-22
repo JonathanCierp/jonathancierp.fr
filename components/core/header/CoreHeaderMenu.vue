@@ -1,17 +1,27 @@
 <template>
 	<ul class="nav__menu flex items-center">
 		<core-header-menu-item v-for="menu in menus" :menu="menu" :key="menu.to" />
-		<li class="ml-4 w-8 h-8 rounded-full bg-black"></li>
+		<v-popover class="flex items-center">
+			<li class="ml-4">
+				<icon-france />
+			</li>
+
+			<template slot="popover">
+				<a v-close-popover>Close</a>
+			</template>
+		</v-popover>
 	</ul>
 </template>
 
 <script>
 	import CoreHeaderMenuItem from "@/components/core/header/CoreHeaderMenuItem"
+	import IconFrance from "@/components/icon/IconFrance"
 
 	export default {
 		name: "core-header-menu",
 		components: {
-			CoreHeaderMenuItem
+			CoreHeaderMenuItem,
+			IconFrance
 		},
 		props: {
 			menus: {

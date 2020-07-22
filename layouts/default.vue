@@ -1,7 +1,7 @@
 <template>
   <div v-if="show">
 		<div class="header-background-color flex flex-col">
-			<core-header :menus="menus" />
+			<core-header :class="headerClass" :menus="menus" />
 			<section-presentation />
 		</div>
 		<core-background-shape />
@@ -25,6 +25,7 @@
 		},
 		data() {
 			return {
+				headerClass: "text-white py-4 h-24",
 				show: false,
 				menus: [
 					{
@@ -32,7 +33,7 @@
 						label: "Présentation"
 					},
 					{
-						to: "#mes_services",
+						to: "#mes-services",
 						label: "Mes services"
 					},
 					{
@@ -50,13 +51,36 @@
 				]
 			}
 		},
+		methods: {
+			handleScroll() {
+				if(window.scrollY >= 20) {
+					this.headerClass = "bg-white text-black fixed w-full py-1 z-50 nav__bottom__minus"
+				}else {
+					this.headerClass = "text-white py-4 h-24"
+				}
+			}
+		},
 		mounted() {
 			this.show = true
+		},
+		created() {
+			if (process.client) {
+				window.addEventListener("scroll", this.handleScroll);
+			}
+		},
+		destroyed() {
+			if (process.client) {
+				window.removeEventListener("scroll", this.handleScroll);
+			}
 		}
 	}
 </script>
 
 <style>
+	html {
+		scroll-behavior: smooth;
+	}
+
 	body {
 		background-color: #f4f8fc;
 		/*background-color: #F5F5F5;*/

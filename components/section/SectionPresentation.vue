@@ -7,8 +7,8 @@
 				site internet selon votre demande.
 			</h2>
 			<div class="presentation__content__actions flex">
-				<button class="presentation__content__actions__contact text-white font-semibold mr-3 py-3 px-6">Me contacter</button>
-				<button class="presentation__content__actions__more text-white font-semibol mx-3 py-3 px-6">En savoir plus</button>
+				<a href="#contact" class="presentation__content__actions__contact text-white font-semibold mr-3 py-3 px-6">Me contacter</a>
+				<a href="#mes-services" class="presentation__content__actions__more text-white font-semibol mx-3 py-3 px-6">En savoir plus</a>
 			</div>
 		</div>
 		<div class="presentation__images w-1/2 relative">

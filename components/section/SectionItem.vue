@@ -7,7 +7,7 @@
 			<div></div>
 		</div>
 		<section-mes-services v-if="section.id === 'mes-services'" />
-		<section-realisations v-if="section.id === 'realisatons'" />
+		<section-realisations v-if="section.id === 'realisations'" />
 		<section-tarifs v-if="section.id === 'tarifs'" />
 		<section-contact v-if="section.id === 'contact'" />
 	</section>
