@@ -189,7 +189,7 @@
 					{
 						id: 2,
 						longTitle: "Poissonnerie Moncayo 2",
-						title: "Moncayo",
+						title: "Moncayo 2",
 						image: "poissonnerie-moncayo.png",
 						to: "https://poissonnerie-moncayo.fr",
 						dev: {

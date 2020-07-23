@@ -181,9 +181,9 @@
 	.tooltip.popover .popover-inner {
 		background: #f9f9f9;
 		color: black;
-		padding: 24px;
+		padding: 10px 25px;
 		border-radius: 5px;
-		box-shadow: 0 5px 30px rgba(black, .1);
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 	}
 
 	.tooltip.popover .popover-arrow {
@@ -200,5 +200,15 @@
 		visibility: visible;
 		opacity: 1;
 		transition: opacity .15s;
+	}
+
+
+	.tooltip.popover .nav__menu__flag__popover-arrow {
+		border-color: #f9f9f9;
+		margin-left: 20px;
+	}
+
+	.tooltip.popover .nav__menu__flag__popover-wrapper {
+		margin-left: 15px;
 	}
 </style>

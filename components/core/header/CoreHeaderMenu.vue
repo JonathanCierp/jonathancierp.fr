@@ -1,12 +1,18 @@
 <template>
 	<ul class="nav__menu flex items-center">
 		<core-header-menu-item v-for="menu in menus" :menu="menu" :key="menu.to" />
-		<v-popover class="flex items-center">
+		<v-popover class="flex items-center" popover-arrow-class="nav__menu__flag__popover-arrow tooltip-arrow popover-arrow"
+							 popover-wrapper-class="nav__menu__flag__popover-wrapper wrapper">
 			<li class="ml-4 cursor-pointer">
 				<icon-france />
 			</li>
 			<template slot="popover">
-				<a v-close-popover>Close</a>
+				<nuxt-link class="text-sm" v-if="$i18n.locale !== 'fr'" :to="$route.fullPath.replace(/^\/[^\/]+/, '')" exact>
+					<icon-france class="inline" />&nbsp;&nbsp;France
+				</nuxt-link>
+				<nuxt-link class="text-sm" v-if="$i18n.locale !== 'en'" :to="`/en${$route.fullPath}`" exact>
+					<icon-english class="inline" />&nbsp;&nbsp;English
+				</nuxt-link>
 			</template>
 		</v-popover>
 	</ul>
@@ -15,12 +21,14 @@
 <script>
 	import CoreHeaderMenuItem from "@/components/core/header/CoreHeaderMenuItem"
 	import IconFrance from "@/components/icon/IconFrance"
+	import IconEnglish from "@/components/icon/IconEnglish"
 
 	export default {
 		name: "core-header-menu",
 		components: {
 			CoreHeaderMenuItem,
-			IconFrance
+			IconFrance,
+			IconEnglish
 		},
 		props: {
 			menus: {
@@ -42,10 +50,5 @@
 		width: 100%;
 		height: 2px;
 		background-color: #1ABC9C;
-	}
-
-	.tooltip[x-placement^="bottom"] {
-		margin-top: 6px;
-		margin-left: 8px;
 	}
 </style>

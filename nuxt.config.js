@@ -61,8 +61,9 @@ export default {
   */
   plugins: [
 		{ src: "@/plugins/vue-carousel", mode: "client" },
-		{ src: '@/plugins/google-analytics.js', mode: 'client' },
-		{ src: '@/plugins/v-tooltip.js', mode: 'client' }
+		{ src: "@/plugins/google-analytics.js", mode: "client" },
+		{ src: "@/plugins/v-tooltip.js", mode: "client" },
+		{ src: "@/plugins/vue-i18n.js" }
   ],
   /*
   ** Auto import components
@@ -99,6 +100,9 @@ export default {
 			short_name: "Développeur web freelance",
 			lang: "fr",
 		},
+	},
+	router: {
+		middleware: "i18n"
 	},
 	/*
 	** Build configuration
