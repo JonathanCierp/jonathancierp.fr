@@ -2,10 +2,9 @@
 	<ul class="nav__menu flex items-center">
 		<core-header-menu-item v-for="menu in menus" :menu="menu" :key="menu.to" />
 		<v-popover class="flex items-center">
-			<li class="ml-4">
+			<li class="ml-4 cursor-pointer">
 				<icon-france />
 			</li>
-
 			<template slot="popover">
 				<a v-close-popover>Close</a>
 			</template>
@@ -32,7 +31,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	.nav .nav__menu .nav__menu__item:hover .nav__menu__underline{
 		width: 100%;
 		height: 3px;
@@ -43,5 +42,10 @@
 		width: 100%;
 		height: 2px;
 		background-color: #1ABC9C;
+	}
+
+	.tooltip[x-placement^="bottom"] {
+		margin-top: 6px;
+		margin-left: 8px;
 	}
 </style>
