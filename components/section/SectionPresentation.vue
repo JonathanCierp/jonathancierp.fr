@@ -1,14 +1,13 @@
 <template>
 	<section itemscope id="presentation" class="presentation mt-16 container mx-auto flex">
 		<div class="presentation__content w-1/2">
-			<h1 class="text-5xl text-white leading-tight font-semibold">Developpeur web <br> freelance à Lyon</h1>
-			<h2 class="my-6 text-white">
-				Développeur freelance à Lyon depuis plus de 1 ans. Je crée votre <br>
-				site internet selon votre demande.
-			</h2>
+			<h1 class="text-5xl text-white leading-tight font-semibold" v-html="$t('body.section.presentation.title')"></h1>
+			<h2 class="my-6 text-white" v-html="$t('body.section.presentation.subtitle')"></h2>
 			<div class="presentation__content__actions flex">
-				<a href="#contact" class="presentation__content__actions__contact text-white font-semibold mr-3 py-3 px-6">Me contacter</a>
-				<a href="#mes-services" class="presentation__content__actions__more text-white font-semibol mx-3 py-3 px-6">En savoir plus</a>
+				<a href="#contact" class="presentation__content__actions__contact text-white font-semibold mr-3 py-3 px-6"
+					 v-html="$t('body.section.presentation.button.contact')"></a>
+				<a href="#mes-services" class="presentation__content__actions__more text-white font-semibol mx-3 py-3 px-6"
+					 v-html="$t('body.section.presentation.button.plus')"></a>
 			</div>
 		</div>
 		<div class="presentation__images w-1/2 relative">

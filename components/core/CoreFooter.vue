@@ -2,7 +2,7 @@
 	<footer class="core-footer p-6 flex items-center">
 		<div class="flex-grow">
 			<nuxt-link class="font-semibold text-white text-lg" to="/">
-				Mentions légales
+				{{ $t("footer.policy") }}
 			</nuxt-link>
 		</div>
 		<div class="flex-grow text-center">

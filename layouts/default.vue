@@ -27,28 +27,7 @@
 			return {
 				headerClass: "text-white py-4 h-24",
 				show: false,
-				menus: [
-					{
-						to: "#presentation",
-						label: "Présentation"
-					},
-					{
-						to: "#mes-services",
-						label: "Mes services"
-					},
-					{
-						to: "#realisations",
-						label: "Réalisations"
-					},
-					{
-						to: "#tarifs",
-						label: "Tarifs"
-					},
-					{
-						to: "#contact",
-						label: "Contact"
-					}
-				]
+				menus: this.$t("header.menus")
 			}
 		},
 		methods: {

@@ -7,7 +7,7 @@
 					<span class="font-semibold">Jonathan CIERP</span>
 				</div>
 			</div>
-			<core-header-menu class="h-full" :menus="menus" />
+			<core-header-menu class="h-full" />
 		</div>
 	</header>
 </template>
@@ -19,12 +19,6 @@
 		name: "core-header",
 		components: {
 			CoreHeaderMenu
-		},
-		props: {
-			menus: {
-				type: Array,
-				required: true
-			}
 		}
 	}
 </script>

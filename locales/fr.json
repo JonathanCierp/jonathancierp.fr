@@ -1,3 +1,41 @@
 {
-
+	"header": {
+		"menus": {
+			"presentation": {
+				"to": "#presentation",
+				"label": "Présentation"
+			},
+			"services": {
+				"to": "#services",
+				"label": "Mes Services"
+			},
+			"realisations": {
+				"to": "#realisations",
+				"label": "Réalisations"
+			},
+			"tarifs": {
+				"to": "#tarifs",
+				"label": "Tarifs"
+			},
+			"contact": {
+				"to": "#contact",
+				"label": "Contact"
+			}
+		}
+	},
+	"body": {
+		"section": {
+			"presentation": {
+				"title": "Developpeur web <br> freelance à Lyon",
+				"subtitle": "Développeur freelance à Lyon depuis plus de 1 an. Je crée votre <br> site internet selon votre demande.",
+				"button": {
+					"contact": "Me contacter",
+					"plus": "En savoir plus"
+				}
+			}
+		}
+	},
+	"footer": {
+		"policy": "Mentions légales"
+	}
 }

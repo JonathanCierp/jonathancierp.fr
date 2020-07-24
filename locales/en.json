@@ -1,3 +1,41 @@
 {
-
+	"header": {
+		"menus": {
+			"presentation": {
+				"to": "#presentation",
+				"label": "About"
+			},
+			"services": {
+				"to": "#mes-services",
+				"label": "Services"
+			},
+			"realisations": {
+				"to": "#realisations",
+				"label": "Portofolio"
+			},
+			"tarifs": {
+				"to": "#tarifs",
+				"label": "Pricing"
+			},
+			"contact": {
+				"to": "#contact",
+				"label": "Contact"
+			}
+		}
+	},
+	"body": {
+		"section": {
+			"presentation": {
+				"title": "Freelance web <br /> developer in Lyon",
+				"subtitle": "Freelance web developer in Lyon for over 1 year. I create your <br /> website according to your request.",
+				"button": {
+					"contact": "Contact me",
+					"plus": "View more"
+				}
+			}
+		}
+	},
+	"footer": {
+		"policy": "Privacy policy"
+	}
 }
