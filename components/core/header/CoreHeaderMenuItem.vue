@@ -1,7 +1,7 @@
 <template>
-	<li class="nav__menu__item mx-2 relative" :class="`${active ? 'nav__menu__item--active': ''}`">
-		<nuxt-link :to="to" exact>
-			{{ label }}
+	<li class="nav__menu__item mx-2 relative" :class="menuActiveClass">
+		<nuxt-link :to="item.to" exact>
+			{{ item.label }}
 		</nuxt-link>
 		<div class="nav__menu__underline absolute"></div>
 	</li>
@@ -11,27 +11,19 @@
 	export default {
 		name: "core-header-menu-item",
 		props: {
-			label: {
-				type: String,
+			item: {
+				type: Object,
 				required: true
-			},
-			to: {
-				type: String,
-				required: true
-			},
-			active: {
-				type: Boolean,
-				default: false
 			}
 		},
 		computed: {
 			menuActiveClass: {
 				get() {
-					/*if(this.menu.to === "#presentation" && (this.$route.fullPath === "/" || this.$route.fullPath === "/en/")) {
+					if(this.item.to === "#presentation" && (this.$route.fullPath === "/" || this.$route.fullPath === "/en/" || this.$route.fullPath === "/en")) {
 						return "nav__menu__item--active"
-					}else if(this.menu.to === this.$route.hash) {
+					}else if(this.item.to === this.$route.hash) {
 						return "nav__menu__item--active"
-					}*/
+					}
 				}
 			}
 		}

@@ -1,27 +1,27 @@
 {
 	"header": {
-		"menus": {
-			"presentation": {
+		"menus": [
+			{
 				"to": "#presentation",
 				"label": "Présentation"
 			},
-			"services": {
+			{
 				"to": "#services",
 				"label": "Mes Services"
 			},
-			"realisations": {
+			{
 				"to": "#realisations",
 				"label": "Réalisations"
 			},
-			"tarifs": {
+			{
 				"to": "#tarifs",
 				"label": "Tarifs"
 			},
-			"contact": {
+			{
 				"to": "#contact",
 				"label": "Contact"
 			}
-		}
+		]
 	},
 	"body": {
 		"section": {
@@ -32,6 +32,124 @@
 					"contact": "Me contacter",
 					"plus": "En savoir plus"
 				}
+			},
+			"services":  {
+				"id": "services",
+				"class": "services",
+				"title": "Mes services",
+				"items": [
+					{
+						"id": "integration",
+						"title": "Intégration Web",
+						"description": "Transformation des maquette en votre site web."
+					},
+					{
+						"id": "specifique",
+						"title": "Développement spécifique",
+						"description": "Des outils adaptés à votre coeur de métier, applications & solutions personnalisées."
+					},
+					{
+						"id": "seo",
+						"title": "Référencement",
+						"description": "Améliorer votre positionnement dans les moteurs de recherche."
+					},
+					{
+						"id": "responsive",
+						"title": "Responsive design",
+						"description": "Compatible tous supports, tablette & application mobile."
+					}
+				]
+			},
+			"realisations": {
+				"id": "realisations",
+				"class": "realisations",
+				"title": "Mes derniers projets",
+				"items": [
+					{
+						"id": 1,
+						"longTitle": "Poissonnerie Moncayo",
+						"title": "Moncayo",
+						"image": "poissonnerie-moncayo.png",
+						"to": "https://poissonnerie-moncayo.fr",
+						"dev": {
+							"title": "Développement complet",
+							"details": [
+								{
+									"title": "Conception graphique & Webdesign (figma)"
+								},
+								{
+									"title": "Intégration de la maquette"
+								},
+								{
+									"title": "Développement sous Vuejs2"
+								},
+								{
+									"title": "Référencement naturel SEO"
+								},
+								{
+									"title": "Site responsive (adapté tous support)"
+								}
+							]
+						},
+						"info": {
+							"title": "Information projet",
+							"details": [
+								{
+									"title": "Année",
+									"icon": "icon-calendar",
+									"value": "2019",
+									"class": ""
+								},
+								{
+									"title": "Catégorie",
+									"icon": "icon-tags",
+									"value": "Développement web",
+									"class": "font-bold"
+								}
+							],
+							"tags": [
+								{
+									"title": "PHP"
+								},
+								{
+									"title": "LARAVEL"
+								},
+								{
+									"title": "VUEJS"
+								},
+								{
+									"title": "FIGMA"
+								},
+								{
+									"title": "HTML"
+								},
+								{
+									"title": "JAVASCRIPT"
+								},
+								{
+									"title": "MYSQL"
+								},
+								{
+									"title": "SEO"
+								},
+								{
+									"title": "RESPONSIVE"
+								}
+							]
+						}
+					}
+				]
+			},
+			"tarifs":  {
+				"id": "tarifs",
+				"class": "tarifs",
+				"title": "Tarifs",
+				"demandeDevis": "<span>Une idée, un projet ? N'hésitez pas à <span>demander un devis</span> ! [GRATUIT]</span>"
+			},
+			"contact": {
+				"id": "contact",
+				"class": "contact",
+				"title": "Me contacter"
 			}
 		}
 	},

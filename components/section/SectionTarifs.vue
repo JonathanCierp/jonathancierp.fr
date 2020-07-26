@@ -1,8 +1,7 @@
 <template>
 	<div class="tarifs mt-16">
-		<div class="tarifs__devis bg-white flex items-center justify-center h-16 font-bold text-xl">
-			<span>Une idée, un projet ? N'hésitez pas à <span>demander un devis</span> ! [GRATUIT]</span>
-		</div>
+		<div class="tarifs__devis bg-white flex items-center justify-center h-16 font-bold text-xl"
+			v-html="$t('body.section.tarifs.demandeDevis')"></div>
 		<div class="tarifs__ items flex mt-8">
 			<section-tarifs-item class="hover:shadow-md transition-shadow duration-300 ease-in-out" v-for="(tarif, i) in tarifs" :key="i" :tarif="tarif" />
 			<div class="tarifs__row w-1/4 flex flex-col">

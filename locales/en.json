@@ -1,27 +1,27 @@
 {
 	"header": {
-		"menus": {
-			"presentation": {
+		"menus": [
+			{
 				"to": "#presentation",
 				"label": "About"
 			},
-			"services": {
-				"to": "#mes-services",
+			{
+				"to": "#services",
 				"label": "Services"
 			},
-			"realisations": {
+			{
 				"to": "#realisations",
 				"label": "Portofolio"
 			},
-			"tarifs": {
+			{
 				"to": "#tarifs",
 				"label": "Pricing"
 			},
-			"contact": {
+			{
 				"to": "#contact",
 				"label": "Contact"
 			}
-		}
+		]
 	},
 	"body": {
 		"section": {
@@ -32,6 +32,124 @@
 					"contact": "Contact me",
 					"plus": "View more"
 				}
+			},
+			"services": {
+				"id": "services",
+				"class": "services",
+				"title": "My services",
+				"items": [
+					{
+						"id": "integration",
+						"title": "Web integration",
+						"description": "Turn your mock up into websites"
+					},
+					{
+						"id": "specifique",
+						"title": "Specific development",
+						"description": "Adapted tools to your core business, applications & customized solutions."
+					},
+					{
+						"id": "seo",
+						"title": "Seo",
+						"description": "Improve your positioning in the search engines."
+					},
+					{
+						"id": "responsive",
+						"title": "Responsive design",
+						"description": "Compatible with all media, tablet & mobile application."
+					}
+				]
+			},
+			"realisations": {
+				"id": "realisations",
+				"class": "realisations",
+				"title": "My latest works",
+				"items": [
+					{
+						"id": 1,
+						"longTitle": "Poissonnerie Moncayo",
+						"title": "Moncayo",
+						"image": "poissonnerie-moncayo.png",
+						"to": "https://poissonnerie-moncayo.fr",
+						"dev": {
+							"title": "Full development",
+							"details": [
+								{
+									"title": "Graphic design & Webdesign (figma)"
+								},
+								{
+									"title": "Mock up integration"
+								},
+								{
+									"title": "Développement sous Vuejs2"
+								},
+								{
+									"title": "SEO"
+								},
+								{
+									"title": "Responsive"
+								}
+							]
+						},
+						"info": {
+							"title": "Projet information",
+							"details": [
+								{
+									"title": "Year",
+									"icon": "icon-calendar",
+									"value": "2019",
+									"class": ""
+								},
+								{
+									"title": "Category",
+									"icon": "icon-tags",
+									"value": "Web development",
+									"class": "font-bold"
+								}
+							],
+							"tags": [
+								{
+									"title": "PHP"
+								},
+								{
+									"title": "LARAVEL"
+								},
+								{
+									"title": "VUEJS"
+								},
+								{
+									"title": "FIGMA"
+								},
+								{
+									"title": "HTML"
+								},
+								{
+									"title": "JAVASCRIPT"
+								},
+								{
+									"title": "MYSQL"
+								},
+								{
+									"title": "SEO"
+								},
+								{
+									"title": "RESPONSIVE"
+								}
+							]
+						}
+					}
+				]
+			},
+			"tarifs":  {
+				"id": "tarifs",
+				"class": "tarifs",
+				"title": "Pricing",
+				"demandeDevis": "<span>An idea, a project ? Do not hesitate to <span>ask for a quote</span> ! [FREE]</span>"
+			},
+			"contact": {
+				"id": "contact",
+				"class": "contact",
+				"title": "Me contacter"
 			}
 		}
 	},

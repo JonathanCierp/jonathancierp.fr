@@ -1,7 +1,14 @@
 <template>
 	<div class="container mx-auto">
 		<main>
-			<section-item v-for="section in sections" :key="section.id" :section="section" />
+			<section-item :id="$t('body.section.services.id')" :className="$t('body.section.services.class')"
+				:title="$t('body.section.services.title')" />
+			<section-item :id="$t('body.section.realisations.id')" :className="$t('body.section.realisations.class')"
+				:title="$t('body.section.realisations.title')" />
+			<section-item :id="$t('body.section.tarifs.id')" :className="$t('body.section.tarifs.class')"
+				:title="$t('body.section.tarifs.title')" />
+			<section-item :id="$t('body.section.contact.id')" :className="$t('body.section.contact.class')"
+				:title="$t('body.section.contact.title')" />
 		</main>
 	</div>
 </template>
@@ -12,32 +19,6 @@
 	export default {
 		components: {
 			SectionItem
-		},
-		data() {
-			return {
-				sections: [
-					{
-						id: "mes-services",
-						class: "mes-services",
-						title: "Mes services"
-					},
-					{
-						id: "realisations",
-						class: "realisations",
-						title: "Mes derniers projets"
-					},
-					{
-						id: "tarifs",
-						class: "tarifs",
-						title: "Tarifs"
-					},
-					{
-						id: "contact",
-						class: "contact",
-						title: "Me contacter"
-					},
-				]
-			}
 		}
 	}
 </script>

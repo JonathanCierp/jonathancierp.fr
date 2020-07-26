@@ -1,20 +1,12 @@
 <template>
 	<div class="services flex mt-16">
-		<div class="services__item relative hover:shadow-md transition-shadow duration-300 ease-in-out" :class="i < 3 ? 'mr-6' : ''" v-for="(service, i) in services">
-			<div class="services__item__title flex justify-center items-center">
-				<span>{{ service.title }}</span>
-			</div>
-			<div class="services__item__icon p-4 rounded-full absolute">
-				<component :is="service.icon" />
-			</div>
-			<div class="services__item__description flex items-center bg-white text-center px-6 mb-6">
-				<span>{{ service.description }}</span>
-			</div>
-		</div>
+		<section-mes-services-item :class="item.id !== 'responsive' ? 'mr-6' : ''" v-for="item in $t('body.section.services.items')"
+			:item="item" :key="item.id" :icons="icons" />
 	</div>
 </template>
 
 <script>
+	import SectionMesServicesItem from "@/components/section/SectionMesServicesItem"
 	import IconPencil from "@/components/icon/IconPencil"
 	import IconSearchCode from "@/components/icon/IconSearchCode"
 	import IconSeo from "@/components/icon/IconSeo"
@@ -22,30 +14,17 @@
 
 	export default {
 		name: "section-mes-services",
+		components: {
+			SectionMesServicesItem
+		},
 		data() {
 			return {
-				services: [
-					{
-						title: "Intégration Web",
-						icon: IconPencil,
-						description: "Transformation des maquette en votre site web."
-					},
-					{
-						title: "Développement spécifique",
-						icon: IconSearchCode,
-						description: "Des outils adaptés à votre coeur de métier, applications & solutions personnalisées."
-					},
-					{
-						title: "Référencement",
-						icon: IconSeo,
-						description: "Améliorer votre positionnement dans les moteurs de recherche."
-					},
-					{
-						title: "Responsive design",
-						icon: IconResponsive,
-						description: "Compatible tous supports, tablette & application mobile."
-					}
-				]
+				icons: {
+					integration: IconPencil,
+					specifique: IconSearchCode,
+					seo: IconSeo,
+					responsive: IconResponsive
+				}
 			}
 		}
 	}

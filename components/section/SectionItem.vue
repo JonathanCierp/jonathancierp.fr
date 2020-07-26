@@ -1,15 +1,15 @@
 <template>
-	<section itemscope :id="section.id" class="section mt-12" :class="section.class">
-		<h2 class="text-5xl font-bold text-center">{{ section.title }}</h2>
+	<section itemscope :id="id" class="section mt-12" :class="className">
+		<h2 class="text-5xl font-bold text-center">{{ title }}</h2>
 		<div class="section__divider mt-6 flex justify-center items-center">
 			<div></div>
 			<icon-circle class="mx-4" />
 			<div></div>
 		</div>
-		<section-mes-services v-if="section.id === 'mes-services'" />
-		<section-realisations v-if="section.id === 'realisations'" />
-		<section-tarifs v-if="section.id === 'tarifs'" />
-		<section-contact v-if="section.id === 'contact'" />
+		<section-mes-services v-if="id === 'services'" />
+		<section-realisations v-if="id === 'realisations'" />
+		<section-tarifs v-if="id === 'tarifs'" />
+		<section-contact v-if="id === 'contact'" />
 	</section>
 </template>
 
@@ -30,8 +30,16 @@
 			SectionMesServices
 		},
 		props: {
-			section: {
-				type: Object,
+			id: {
+				type: String,
+				required: true
+			},
+			className: {
+				type: String,
+				required: true
+			},
+			title: {
+				type: String,
 				required: true
 			}
 		}
