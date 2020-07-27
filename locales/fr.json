@@ -149,7 +149,36 @@
 			"contact": {
 				"id": "contact",
 				"class": "contact",
-				"title": "Me contacter"
+				"title": "Me contacter",
+				"items": [
+					{
+						"icon": "icon-road",
+						"title": "Adresse",
+						"content": "Rillieux-la-pape"
+					},
+					{
+						"icon": "icon-phone",
+						"title": "Téléphone",
+						"content": "(+33) 6 17 07 83 70"
+					},
+					{
+						"icon": "icon-mail",
+						"title": "E-mail",
+						"content": "contact@jonathancierp.fr"
+					},
+					{
+						"icon": "icon-cog",
+						"title": "Siret",
+						"content": "844 068 973 00016"
+					}
+				],
+				"form": {
+					"nom":"Nom / Société / Organisation",
+					"telephone": "Téléphone",
+					"sujet": "Sujet",
+					"message": "Merci de détailler le plus possible votre besoin afin de faciliter nos futurs échanges.",
+					"button": "Envoyer"
+				}
 			}
 		}
 	},

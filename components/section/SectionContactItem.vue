@@ -2,7 +2,7 @@
 	<div class="contact-item flex flex-col mb-6">
 		<div class="content-item__row flex items-center">
 			<div class="content-item__icon mr-6">
-				<component :is="contact.icon" />
+				<component :is="icons[contact.icon]" />
 			</div>
 			<div class="content-item__title text-xl">{{ contact.title }}</div>
 		</div>
@@ -16,6 +16,10 @@
 		name: "section-contact-item",
 		props: {
 			contact: {
+				type: Object,
+				required: true
+			},
+			icons: {
 				type: Object,
 				required: true
 			}

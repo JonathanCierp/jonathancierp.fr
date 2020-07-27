@@ -1,20 +1,20 @@
 <template>
 	<div class="contact flex mt-16">
 		<div class="contact__contact">
-			<section-contact-item v-for="contact in contacts" :key="contact.title" :contact="contact"/>
+			<section-contact-item v-for="contact in $t('body.section.contact.items')" :key="contact.title" :contact="contact" :icons="icons" />
 		</div>
 		<div class="contact__separator mx-8"></div>
 		<form class="contact__form">
 			<div class="flex">
-				<form-input class="mr-4 flex-grow" placeholder="Nom / Société / Organisation" :icon-left="iconUser" required/>
-				<form-input class="ml-4 flex-grow" type="tel" placeholder="Téléphone" :icon-left="iconPhone"/>
+				<form-input class="mr-4 flex-grow" :placeholder="$t('body.section.contact.form.nom')" :icon-left="iconUser" required/>
+				<form-input class="ml-4 flex-grow" type="tel" :placeholder="$t('body.section.contact.form.telephone')" :icon-left="iconPhone"/>
 			</div>
-			<form-input class="flex-grow mt-6" placeholder="Sujet" :icon-left="iconSubject" required/>
+			<form-input class="flex-grow mt-6" :placeholder="$t('body.section.contact.form.sujet')" :icon-left="iconSubject" required/>
 			<form-textarea class="flex-grow mt-6"
-										 placeholder="Merci de détailler le plus possible votre besoin afin de faciliter nos futurs échanges."
+										 :placeholder="$t('body.section.contact.form.message')"
 										 required/>
 			<div class="contact__form__button text-right mt-8">
-				<button class="text-white font-semibold py-3 px-8">Envoyer</button>
+				<button class="text-white font-semibold py-3 px-8" v-html="$t('body.section.contact.form.button')"></button>
 			</div>
 		</form>
 	</div>
@@ -36,39 +36,19 @@
 		components: {
 			SectionContactItem,
 			FormInput,
-			FormTextarea,
-			IconRoad,
-			IconPhone,
-			IconMail,
-			IconCog
+			FormTextarea
 		},
 		data() {
 			return {
+				icons: {
+					"icon-road": IconRoad,
+					"icon-phone": IconPhone,
+					"icon-mail": IconMail,
+					"icon-cog": IconCog
+				},
 				iconUser: IconUser,
 				iconPhone: IconPhone,
-				iconSubject: IconSubject,
-				contacts: [
-					{
-						icon: IconRoad,
-						title: "Adresse",
-						content: "Rillieux-la-pape"
-					},
-					{
-						icon: IconPhone,
-						title: "Téléphone",
-						content: "(+33) 6 17 07 83 70"
-					},
-					{
-						icon: IconMail,
-						title: "E-mail",
-						content: "contact@jonathancierp.fr"
-					},
-					{
-						icon: IconCog,
-						title: "Siret",
-						content: "844 068 973 00016"
-					},
-				]
+				iconSubject: IconSubject
 			}
 		}
 	}
