@@ -2,12 +2,30 @@
 	<div class="tarifs mt-16">
 		<div class="tarifs__devis bg-white flex items-center justify-center h-16 font-bold text-xl"
 			v-html="$t('body.section.tarifs.demandeDevis')"></div>
-		<div class="tarifs__ items flex mt-8">
-			<section-tarifs-item class="hover:shadow-md transition-shadow duration-300 ease-in-out" v-for="(tarif, i) in tarifs" :key="i" :tarif="tarif" />
+		<div class="tarifs__items flex items-center mt-8">
+			<div class="tarifs__item relative rounded mr-8">
+				<!--<h3>Développement spécifique</h3>
+				<h4>50€ / mois</h4>
+				<h5>Facturé annuellement ou 45€ / mois</h5>-->
+			</div>
+			<div class="tarifs__item relative rounded mr-8 py-4 px-8">
+				<h3 class="text-center text-2xl font-bold">
+					Site vitrine
+				</h3>
+				<!--<h3>Développement spécifique</h3>
+				<h4>50€ / mois</h4>
+				<h5>Facturé annuellement ou 45€ / mois</h5>-->
+			</div>
+			<div class="tarifs__item relative rounded">
+				<!--<h3>Développement spécifique</h3>
+				<h4>50€ / mois</h4>
+				<h5>Facturé annuellement ou 45€ / mois</h5>-->
+			</div>
+			<!--<section-tarifs-item class="hover:shadow-md transition-shadow duration-300 ease-in-out" v-for="(tarif, i) in tarifs" :key="i" :tarif="tarif" />
 			<div class="tarifs__row w-1/4 flex flex-col">
 				<section-tarifs-item class="hover:shadow-md w-full mb-4 transition-shadow duration-300 ease-in-out" :tarif="tarifMaintenance" :sur-mesure="false" />
 				<section-tarifs-item class="hover:shadow-md w-full transition-shadow duration-300 ease-in-out" :tarif="tarifSpecifique" :sur-mesure="false" />
-			</div>
+			</div>-->
 		</div>
 		<div class="tarifs__annotations text-xs mt-2">
 			<span class="underline font-bold">L'ensemble des tarifs indiqués sont H.T.</span>
@@ -250,5 +268,40 @@
 
 	.tarifs .tarifs__annotations  {
 		color: #818181;
+	}
+
+	.tarifs .tarifs__items .tarifs__item{
+		height: 300px;
+		border: 1px solid #d6d6d6;
+		width: 40%;
+	}
+
+	.tarifs .tarifs__items .tarifs__item:before{
+		content: '';
+		position: absolute;
+		background: #1ABC9C;
+		top: -8px;
+		left: -1px;
+		width: calc(100% + 2px);
+		height: 8px;
+		border-radius: 6px 6px 0 0;
+	}
+
+	.tarifs .tarifs__items .tarifs__item:first-child{
+		height: 250px;
+		width: 30%;
+	}
+
+	.tarifs .tarifs__items .tarifs__item:first-child:before{
+		background: #718096;
+	}
+
+	.tarifs .tarifs__items .tarifs__item:last-child{
+		height: 250px;
+		width: 30%;
+	}
+
+	.tarifs .tarifs__items .tarifs__item:last-child:before{
+		background: #575FCF;
 	}
 </style>
