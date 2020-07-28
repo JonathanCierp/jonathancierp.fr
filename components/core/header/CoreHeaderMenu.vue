@@ -1,7 +1,7 @@
 <template>
 	<ul class="nav__menu flex items-center">
 		<core-header-menu-item v-for="item in this.$t('header.menus')" :key="item.to" :item="item" />
-		<v-popover class="flex items-center" popover-arrow-class="nav__menu__flag__popover-arrow tooltip-arrow popover-arrow"
+		<!--<v-popover class="flex items-center" popover-arrow-class="nav__menu__flag__popover-arrow tooltip-arrow popover-arrow"
 							 popover-wrapper-class="nav__menu__flag__popover-wrapper wrapper">
 			<li class="ml-4 cursor-pointer">
 				<icon-france v-if="$i18n.locale === 'fr'" />
@@ -15,7 +15,7 @@
 					<icon-english class="inline" />&nbsp;&nbsp;English
 				</nuxt-link>
 			</template>
-		</v-popover>
+		</v-popover>-->
 	</ul>
 </template>
 

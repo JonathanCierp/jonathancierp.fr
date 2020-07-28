@@ -144,7 +144,73 @@
 				"id": "tarifs",
 				"class": "tarifs",
 				"title": "Tarifs",
-				"demandeDevis": "<span>Une idée, un projet ? N'hésitez pas à <span>demander un devis</span> ! [GRATUIT]</span>"
+				"demandeDevis": "<span>Une idée, un projet ? N'hésitez pas à <span>demander un devis</span> ! [GRATUIT]</span>",
+				"items": [
+					{
+						"title": "Développement spécifique **",
+						"price": "35€ / heure",
+						"annotation": "Ou 350€ / jour sur la base de 8h dans la journée",
+						"buttonLabel":  "Me contacter",
+						"details": [
+
+						]
+					},
+					{
+						"title": "Site vitrine *",
+						"price":  "40€ par mois",
+						"annotation":  "Facturé annuellement ou 50€ facturé par mois",
+						"buttonLabel":  "Voir les templates",
+						"details": [
+							{
+								"title": "Interface d'administration standard"
+							},
+							{
+								"title": "Formulaire de contact"
+							},
+							{
+								"title": "Site responsive (adapté tous supports)"
+							},
+							{
+								"title": "Optimisation du référencement"
+							},
+							{
+								"title": "Statistiques de visite"
+							},
+							{
+								"title": "Formation utilisation du site"
+							}
+						]
+					},
+					{
+						"title": "Plateforme e-commerce *",
+						"price":  "≃ 2500€",
+						"annotation":  "Sur devis ou 100€ facturé par mois",
+						"buttonLabel":  "Voir les templates",
+						"details": [
+							{
+								"title": "Interface administrateur SUR-MESURE"
+							},
+							{
+								"title": "Paiement sécurisé"
+							},
+							{
+								"title": "Création des premiers produits"
+							},
+							{
+								"title": "Site responsive (adapté tous supports)"
+							},
+							{
+								"title": "Optimisation du référencement"
+							},
+							{
+								"title": "Statistiques de visite"
+							},
+							{
+								"title": "Formation utilisation du site"
+							}
+						]
+					}
+				]
 			},
 			"contact": {
 				"id": "contact",

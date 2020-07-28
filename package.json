@@ -13,10 +13,14 @@
     "@nuxtjs/axios": "^5.11.0",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "@nuxtjs/robots": "^2.4.2",
+    "express": "^4.17.1",
+    "nodemailer": "^6.4.10",
     "nuxt": "^2.13.0",
     "v-tooltip": "^2.0.3",
+    "validator": "^13.1.1",
     "vue-carousel": "^0.18.0",
-    "vue-i18n": "^8.18.2"
+    "vue-i18n": "^8.18.2",
+    "xss-filters": "^1.2.7"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^2.0.0"

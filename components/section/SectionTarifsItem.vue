@@ -1,49 +1,17 @@
 <template>
-	<div class="tarifs__item bg-white w-1/4 mr-6 flex flex-col items-center">
-		<div class="tarifs__item__title font-bold text-3xl">
-			<h2>{{ tarif.title }}</h2>
-		</div>
-		<div class="tarifs__item__subtitle font-bold text-2xl">
-			<h3>{{ tarif.subtitle }}</h3>
-		</div>
-		<div class="tarifs__item__separator my-4"></div>
-		<div class="tarifs__item__price-text">
-			<div v-if="tarif.title === 'Forfait'" class="flex">
-				<span class="font-bold text-xl">35</span>
-				<span class="tarifs__item__price__devise font-bold ml-1">€ / heure</span>
-				<span class="tarifs__item__price__sup ml-2">**</span>
-				<span class="font-bold text-xl ml-2">Ou</span>
+	<div class="tarifs__item flex items-center flex-col relative rounded py-8 px-8 w-1/3" >
+		<h3 class="text-center text-xl font-bold" v-html="item.title" />
+		<h5 class="text-center text-xl mt-2 font-medium" v-html="item.price" />
+		<h6 class="text-center text-sm mt-2 w-2/3 font-medium" v-html="item.annotation" />
+		<ul class="tarifs__item__details mt-8 w-full font-medium">
+			<li class="tarifs__item__detail mt-1" v-for="detail in item.details" :key="detail.title" v-html="detail.title" />
+		</ul>
+		<div class="flex items-end h-full mt-8">
+			<div>
+				<nuxt-link to="#contact" v-if="i === 0" class="text-white font-semibold py-2 px-10" v-html="item.buttonLabel" />
+				<button v-if="i === 1" class="text-white font-semibold py-2 px-10" v-html="item.buttonLabel" />
+				<button v-if="i === 2" class="text-white font-semibold py-2 px-10" v-html="item.buttonLabel" />
 			</div>
-			<span v-else>{{ tarif.priceText }}</span>
-		</div>
-		<div class="tarifs__item__price flex">
-			<div class="tarifs__item__price__text font-bold text-5xl">
-				<h3>{{ tarif.price }}</h3>
-			</div>
-			<div class="tarifs__item__price__devise font-bold text-xl mt-2">
-				<span>{{ tarif.priceSupDevise }}</span>
-			</div>
-			<div class="tarifs__item__price__sup ml-2 mt-2">
-				<span>{{ tarif.priceSup }}</span>
-			</div>
-		</div>
-		<div class="tarifs__item__separator" ></div>
-		<div v-if="surMesure" class="tarifs__item__detail text-center text-sm font-semibold">
-			<span>Développé SUR-MESURE</span> <br>
-			<span>(Codage à la main)</span>
-		</div>
-		<div class="tarifs__item__details w-full mt-4">
-			<div class="tarifs__item__details__item flex items-center h-12" v-for="detail in tarif.details" :key="detail.title">
-				<div class="tarifs__item__details__item__icon w-1/5 text-center">
-					<component class="inline" :is="detail.icon" />
-				</div>
-				<div class="tarifs__item__details__item__text w-4/5" :class="detail.class">
-					{{ detail.title }}
-				</div>
-			</div>
-		</div>
-		<div class="tarifs__item__button" :class="`${surMesure ? 'my-10' : 'my-5'}`">
-			<button class="text-white font-semibold py-3 px-8">{{ tarif.buttonLabel }}</button>
 		</div>
 	</div>
 </template>
@@ -52,43 +20,81 @@
 	export default {
 		name: "section-tarifs-item",
 		props: {
-			tarif: {
+			item: {
 				type: Object,
 				required: true
 			},
-			surMesure: {
-				type: Boolean,
-				default: false
+			i: {
+				type: Number,
+				required: true
 			}
 		}
 	}
 </script>
 
 <style>
-	.tarifs__item .tarifs__item__separator {
-		height: 2px;
-		background-color: #1ABC9C;
-		width: 50%;
+	.tarifs__item {
+		height: 475px;
+		border: 1px solid #D6D6D6;
 	}
 
-	.tarifs__item .tarifs__item__price-text {
+	.tarifs__item:before {
+		content: '';
+		position: absolute;
+		background: #1ABC9C;
+		top: -8px;
+		left: -1px;
+		width: calc(100% + 2px);
+		height: 8px;
+		border-radius: 6px 6px 0 0;
+	}
+
+	.tarifs__item:first-child:before {
+		background: #718096;
+	}
+
+	.tarifs__item:last-child:before {
+		background: #575FCF;
+	}
+
+	.tarifs__item h6, .tarifs__item .tarifs__item__details .tarifs__item__detail {
 		color: #818181;
 	}
 
-	.tarifs__item .tarifs__item__details .tarifs__item__details__item__text {
-		font-size: .85rem;
+	.tarifs__item .tarifs__item__details .tarifs__item__detail {
+		background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkiIGhlaWdodD0iMTkiIHZpZXdCb3g9IjAgMCAxOSAxOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCiAgICA8cGF0aCBkPSJNMTIuNjk2NCA4LjQ3NzE2SDkuNjQyODJWNS40MjM1OUM5LjY0MjgyIDUuMzM1MiA5LjU3MDUgNS4yNjI4OCA5LjQ4MjExIDUuMjYyODhIOC41MTc4MkM4LjQyOTQzIDUuMjYyODggOC4zNTcxMSA1LjMzNTIgOC4zNTcxMSA1LjQyMzU5VjguNDc3MTZINS4zMDM1NEM1LjIxNTE0IDguNDc3MTYgNS4xNDI4MiA4LjU0OTQ5IDUuMTQyODIgOC42Mzc4OFY5LjYwMjE2QzUuMTQyODIgOS42OTA1NiA1LjIxNTE0IDkuNzYyODggNS4zMDM1NCA5Ljc2Mjg4SDguMzU3MTFWMTIuODE2NUM4LjM1NzExIDEyLjkwNDggOC40Mjk0MyAxMi45NzcyIDguNTE3ODIgMTIuOTc3Mkg5LjQ4MjExQzkuNTcwNSAxMi45NzcyIDkuNjQyODIgMTIuOTA0OCA5LjY0MjgyIDEyLjgxNjVWOS43NjI4OEgxMi42OTY0QzEyLjc4NDggOS43NjI4OCAxMi44NTcxIDkuNjkwNTYgMTIuODU3MSA5LjYwMjE2VjguNjM3ODhDMTIuODU3MSA4LjU0OTQ5IDEyLjc4NDggOC40NzcxNiAxMi42OTY0IDguNDc3MTZaIiBmaWxsPSIjMUFCQzlDIi8+DQogICAgPHBhdGggZD0iTTkgMC4xMTk5OTVDNC4wMjk5MSAwLjExOTk5NSAwIDQuMTQ5OTEgMCA5LjEyQzAgMTQuMDkwMSA0LjAyOTkxIDE4LjEyIDkgMTguMTJDMTMuOTcwMSAxOC4xMiAxOCAxNC4wOTAxIDE4IDkuMTJDMTggNC4xNDk5MSAxMy45NzAxIDAuMTE5OTk1IDkgMC4xMTk5OTVaTTkgMTYuNTkzMkM0Ljg3MzY2IDE2LjU5MzIgMS41MjY3OSAxMy4yNDYzIDEuNTI2NzkgOS4xMkMxLjUyNjc5IDQuOTkzNjYgNC44NzM2NiAxLjY0Njc4IDkgMS42NDY3OEMxMy4xMjYzIDEuNjQ2NzggMTYuNDczMiA0Ljk5MzY2IDE2LjQ3MzIgOS4xMkMxNi40NzMyIDEzLjI0NjMgMTMuMTI2MyAxNi41OTMyIDkgMTYuNTkzMloiIGZpbGw9IiMxQUJDOUMiLz4NCjwvc3ZnPg==");
+		background-repeat: no-repeat;
+		background-size: 18px auto;
+		background-position: left 5.5px;
+		padding-left: 24px;
 	}
 
-	.tarifs__item__details__item:nth-child(odd){
-		background-color: #F1F1F1;
-	}
-
-	.tarifs .tarifs__item .tarifs__item__button button {
+	.tarifs__item button {
 		background-color: #1ABC9C;
 		border: 4px solid #1ED0AD;
 	}
 
-	.tarifs .tarifs__item .tarifs__item__button button:hover {
+	.tarifs__item button:hover {
 		background-color: #1ED0AD;
+	}
+
+	.tarifs__item:first-child a {
+		background-color: #FFFFFF;
+		border: 4px solid #1ED0AD;
+		color: #1ED0AD;
+	}
+
+	.tarifs__item:first-child a:hover {
+		background-color: #1ED0AD;
+		color: #FFFFFF;
+	}
+
+	.tarifs__item:last-child button {
+		background-color: #575fcf;
+		border: 4px solid #434CCD;
+	}
+
+	.tarifs__item:last-child button:hover {
+		background-color: #434CCD;
 	}
 </style>

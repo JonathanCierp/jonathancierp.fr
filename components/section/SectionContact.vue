@@ -4,17 +4,15 @@
 			<section-contact-item v-for="contact in $t('body.section.contact.items')" :key="contact.title" :contact="contact" :icons="icons" />
 		</div>
 		<div class="contact__separator mx-8"></div>
-		<form class="contact__form">
+		<form class="contact__form" @submit.prevent="onSubmit">
 			<div class="flex">
-				<form-input class="mr-4 flex-grow" :placeholder="$t('body.section.contact.form.nom')" :icon-left="iconUser" required/>
-				<form-input class="ml-4 flex-grow" type="tel" :placeholder="$t('body.section.contact.form.telephone')" :icon-left="iconPhone"/>
+				<form-input ref="name" v-model="form.name" class="mr-4 flex-grow" :placeholder="$t('body.section.contact.form.nom')" :icon-left="iconUser" required />
+				<form-input ref="phone" v-model="form.phone" class="ml-4 flex-grow" type="tel" :placeholder="$t('body.section.contact.form.telephone')" :icon-left="iconPhone" />
 			</div>
-			<form-input class="flex-grow mt-6" :placeholder="$t('body.section.contact.form.sujet')" :icon-left="iconSubject" required/>
-			<form-textarea class="flex-grow mt-6"
-										 :placeholder="$t('body.section.contact.form.message')"
-										 required/>
+			<form-input ref="subject" v-model="form.subject" class="flex-grow mt-6" :placeholder="$t('body.section.contact.form.sujet')" :icon-left="iconSubject" required />
+			<form-textarea ref="message" v-model="form.message" class="flex-grow mt-6" :placeholder="$t('body.section.contact.form.message')" required />
 			<div class="contact__form__button text-right mt-8">
-				<button class="text-white font-semibold py-3 px-8" v-html="$t('body.section.contact.form.button')"></button>
+				<button type="submit" class="text-white font-semibold py-3 px-8" v-html="$t('body.section.contact.form.button')"></button>
 			</div>
 		</form>
 	</div>
@@ -48,7 +46,34 @@
 				},
 				iconUser: IconUser,
 				iconPhone: IconPhone,
-				iconSubject: IconSubject
+				iconSubject: IconSubject,
+				form: {
+					name: null,
+					phone: null,
+					subject: null,
+					message: null
+				}
+			}
+		},
+		methods: {
+			onSubmit() {
+				let formValid = true
+
+				if(!this.$refs.name.validate()) {
+					formValid = this.$refs.name.validate()
+				}
+
+				if(!this.$refs.subject.validate()) {
+					formValid = this.$refs.subject.validate()
+				}
+
+				if(!this.$refs.message.validate()) {
+					formValid = this.$refs.message.validate()
+				}
+
+				if(formValid) {
+					console.log(1)
+				}
 			}
 		}
 	}

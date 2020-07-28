@@ -47,7 +47,8 @@ export default {
 					"Développement web, création ou refonte de site internet, intégration, référencement, etc..." }
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+			{ rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:wght@400;500;700&display=swap' }
     ]
   },
   /*
@@ -104,6 +105,9 @@ export default {
 	router: {
 		middleware: "i18n"
 	},
+	serverMiddleware: [
+		'@/api'
+	],
 	/*
 	** Build configuration
 	** See https://nuxtjs.org/api/configuration-build/

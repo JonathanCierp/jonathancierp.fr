@@ -60,7 +60,7 @@
 		animation: float 3s ease-in infinite;
 		left: 28%;
 		top: 26%;
-		z-index: 1;
+		z-index: 2;
 		width: 61px;
 		height: 105px;
 	}
@@ -69,7 +69,7 @@
 		animation: float 3.5s ease-in infinite;
 		left: 23%;
 		top: 58%;
-		z-index: 1;
+		z-index: 2;
 		width: 74px;
 		height: 115px;
 	}
@@ -78,7 +78,7 @@
 		animation: float 4s ease-in infinite;
 		left: 52%;
 		top: 67%;
-		z-index: 1;
+		z-index: 2;
 		width: 135px;
 		height: 150px;
 	}
@@ -87,7 +87,7 @@
 		animation: float 4.5s ease-in infinite;
 		left: 29%;
 		top: 3%;
-		z-index: 0;
+		z-index: 1;
 		width: 239px;
 		height: 270px;
 	}
