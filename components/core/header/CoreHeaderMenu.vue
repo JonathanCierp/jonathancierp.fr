@@ -1,6 +1,6 @@
 <template>
-	<ul class="nav__menu flex items-center">
-		<core-header-menu-item v-for="item in this.$t('header.menus')" :key="item.to" :item="item" />
+	<ul class="nav__menu items-center">
+		<core-header-menu-item v-for="item in this.$t('header.menus')" :key="item.to" :item="item" :open="open" />
 		<!--<v-popover class="flex items-center" popover-arrow-class="nav__menu__flag__popover-arrow tooltip-arrow popover-arrow"
 							 popover-wrapper-class="nav__menu__flag__popover-wrapper wrapper">
 			<li class="ml-4 cursor-pointer">
@@ -30,6 +30,12 @@
 			CoreHeaderMenuItem,
 			IconFrance,
 			IconEnglish
+		},
+		props: {
+			open: {
+				type: Boolean,
+				default: false
+			}
 		}
 	}
 </script>

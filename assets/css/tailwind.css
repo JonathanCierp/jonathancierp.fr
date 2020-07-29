@@ -32,8 +32,8 @@
 
 /* top left*/
 .ribbon-top-left {
-	top: -10px;
-	left: -10px;
+	top: 0;
+	left: 0;
 }
 .ribbon-top-left::before,
 .ribbon-top-left::after {

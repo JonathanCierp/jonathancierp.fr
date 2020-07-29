@@ -1,11 +1,11 @@
 <template>
 	<div class="tarifs mt-16">
-		<div class="tarifs__devis bg-white flex items-center justify-center h-16 font-bold text-xl"
+		<div class="tarifs__devis bg-white flex items-center justify-center h-16 font-bold md:text-xl px-4"
 				 v-html="$t('body.section.tarifs.demandeDevis')"></div>
-		<div class="tarifs__items flex items-center mt-8">
-			<section-tarifs-item v-for="(item, i) in $t('body.section.tarifs.items')" :class="`${i !== 2 ? 'mr-8' : ''}`" :key="item.title" :item="item" :i="i" />
+		<div class="tarifs__items flex flex-wrap justify-center mt-8">
+			<section-tarifs-item v-for="(item, i) in $t('body.section.tarifs.items')" :key="item.title" :item="item" :i="i" />
 		</div>
-		<div class="tarifs__annotations text-xs mt-2">
+		<div class="tarifs__annotations text-xs mt-2 text-center xl:text-left">
 			<span class="underline font-bold">L'ensemble des tarifs indiqués sont H.T.</span>
 			<span>
 				<span class="font-bold">Paiment possible en plusieurs fois.</span>

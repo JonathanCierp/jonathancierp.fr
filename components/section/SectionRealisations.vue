@@ -1,16 +1,16 @@
 <template>
 	<div>
-		<carousel class="mt-16 w-full" navigation-enabled :pagination-enabled="false">
-			<slide class="flex justify-center cursor-pointer" v-for="item in items" :key="item.title">
+		<div class="realisations mt-16 w-full flex flex-wrap">
+			<div class="realisations__item flex justify-center cursor-pointer relative px-6 sm:w-1/2 md:w-1/3 xl:w-1/4 pr-6 my-4" v-for="item in items" :key="item.title" @click="openModal(item)" >
 				<div class="relative">
 					<div class="ribbon ribbon-top-left z-10">
 						<span class="text-xs font-bold">{{ item.title }}</span>
 					</div>
-					<img @click="openModal(item)" class="slider-image" :src="resolveImage(item.image)"
+					<img class="slider-image" :src="resolveImage(item.image)"
 							 :alt="item.title">
 				</div>
-			</slide>
-		</carousel>
+			</div>
+		</div>
 		<section-realisations-details :icons="icons" v-model="show" :realisation="item" @previous="previousRealisation" @next="nextRealisation"
 			:realisations="$t('body.section.realisations.items')" @close="closeModal" />
 	</div>
@@ -61,11 +61,7 @@
 </script>
 
 <style>
-	.slider-image {
-		margin-top: -19px;
-	}
-
-	.slider-image:hover {
+	.realisations__item:hover {
 		opacity: 0.9;
 	}
 </style>

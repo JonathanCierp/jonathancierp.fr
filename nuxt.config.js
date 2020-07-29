@@ -90,7 +90,9 @@ export default {
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
-  axios: {},
+  axios: {
+  	baseURL: process.env.BASE_URL_API
+	},
 	pwa: {
 		meta: {
 			title: "Développeur web freelance - Création de site web",

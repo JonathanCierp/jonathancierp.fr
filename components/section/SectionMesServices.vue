@@ -1,6 +1,6 @@
 <template>
-	<div class="services flex mt-16">
-		<section-mes-services-item :class="item.id !== 'responsive' ? 'mr-6' : ''" v-for="item in $t('body.section.services.items')"
+	<div class="services flex flex-wrap mt-12">
+		<section-mes-services-item v-for="item in $t('body.section.services.items')"
 			:item="item" :key="item.id" :icons="icons" />
 	</div>
 </template>
@@ -33,7 +33,6 @@
 <style>
 	.services .services__item {
 		height: 300px;
-		width: 25%;
 	}
 
 	.services .services__item .services__item__title {
@@ -43,7 +42,7 @@
 
 	.services .services__item .services__item__icon {
 		top: 30%;
-		left: 41%;
+		left: calc(50% - 2.5rem);
 		background-color: #F8F8F8;
 	}
 

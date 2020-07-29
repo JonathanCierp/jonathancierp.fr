@@ -1,11 +1,11 @@
 <template>
   <div v-if="show">
 		<div class="header-background-color flex flex-col">
-			<core-header :class="headerClass" :menus="menus" />
-			<section-presentation />
+			<core-header class="fixed w-full" :class="headerClass" />
+			<section-presentation class="px-4 pt-24" />
 		</div>
 		<core-background-shape />
-    <Nuxt />
+    <Nuxt class="px-4" />
 		<core-footer class="mt-12" />
   </div>
 </template>
@@ -26,14 +26,13 @@
 		data() {
 			return {
 				headerClass: "text-white py-4 h-24",
-				show: false,
-				menus: this.$t("header.menus")
+				show: false
 			}
 		},
 		methods: {
 			handleScroll() {
 				if(window.scrollY >= 20) {
-					this.headerClass = "bg-white text-black fixed w-full py-1 z-50 nav__bottom__minus"
+					this.headerClass = "bg-white text-black py-1 z-50 nav__bottom__minus"
 				}else {
 					this.headerClass = "text-white py-4 h-24"
 				}
@@ -56,8 +55,13 @@
 </script>
 
 <style>
+	button:focus {
+		outline: none;
+	}
+
 	html {
 		scroll-behavior: smooth;
+		overflow-x: hidden;
 	}
 
 	body {

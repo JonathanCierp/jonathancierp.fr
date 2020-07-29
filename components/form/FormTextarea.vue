@@ -48,7 +48,7 @@
 			validate(value) {
 				const v = value || this.value
 				this.error = !!!v
-				
+
 				return !!v
 			}
 		}

@@ -1,5 +1,5 @@
 <template>
-	<div class="container mx-auto">
+	<div class="lg:container mx-auto">
 		<main>
 			<section-item :id="$t('body.section.services.id')" :className="$t('body.section.services.class')"
 				:title="$t('body.section.services.title')" />
